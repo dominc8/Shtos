@@ -2,6 +2,8 @@
 
 #include <SDL2/SDL.h>
 
+#include "Logger/Logger.h"
+
 class Game
 {
 public:
@@ -19,13 +21,13 @@ public:
         if (SDL_Init(SDL_INIT_EVERYTHING) == 0)
         {
             ++init_counter;
-            printf("SDL_Init is good\n");
+            SHTOS_LOG_INFO("SDL_Init is good\n");
 
             _window = SDL_CreateWindow(title, x_pos, y_pos, width, height, flags);
             if (_window)
             {
                 ++init_counter;
-                printf("Window is good\n");
+                SHTOS_LOG_INFO("Window is good\n");
 
             }
 
@@ -34,7 +36,7 @@ public:
             {
                 ++init_counter;
                 SDL_SetRenderDrawColor(_renderer, 20, 220, 20, 200);
-                printf("Renderer is good\n");
+                SHTOS_LOG_INFO("Renderer is good\n");
             }
         }
 
@@ -76,7 +78,7 @@ public:
         SDL_DestroyRenderer(_renderer);
         SDL_DestroyWindow(_window);
         SDL_Quit();
-        printf("Cleaned\n");
+        SHTOS_LOG_INFO("Cleaned\n");
     }
 
     bool isRunning()
@@ -112,6 +114,9 @@ int main(int argc, char *argv[])
 
     game.clean();
 
-    printf("Console test\n");
+    SHTOS_LOG_INFO("Info test\n");
+    SHTOS_LOG_WARN("Warning test\n");
+    SHTOS_LOG_ERR("Error test\n");
+
     return 0;
 }

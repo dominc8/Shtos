@@ -1,6 +1,7 @@
 CC:=g++
+CCFLAGS:=-DDEBUG
 
-INCLUDE_DIRS:=
+INCLUDE_DIRS:=Shtos/
 LIBS:=
 
 ifeq ($(OS),Windows_NT)

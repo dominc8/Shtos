@@ -4,7 +4,7 @@
 class Layer
 {
 public:
-    Layer(const char* name = "Layer") : _name(name) {};
+    Layer(const char *name = "Layer");
     virtual ~Layer() = default;
 
     virtual void onAttach() {}

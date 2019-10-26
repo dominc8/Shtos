@@ -46,9 +46,9 @@
 #define WHT   "\x1B[37m"
 #define RESET "\x1B[0m"
 
-#define SHTOS_LOG_INFO(...) printf(GRN __VA_ARGS__ RESET)
-#define SHTOS_LOG_WARN(...) printf(YEL __VA_ARGS__ RESET)
-#define SHTOS_LOG_ERR(...)  printf(RED __VA_ARGS__ RESET)
+#define SHTOS_LOG_INFO(format, ...) printf(GRN format "\n" RESET, ##__VA_ARGS__)
+#define SHTOS_LOG_WARN(format, ...) printf(YEL format "\n" RESET, ##__VA_ARGS__)
+#define SHTOS_LOG_ERR(format, ...)  printf(RED format "\n" RESET, ##__VA_ARGS__)
 
 #else /* DEBUG */
 

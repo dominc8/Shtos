@@ -3,6 +3,7 @@
 
 #include "Layer/Layer.h"
 #include "LayerStack/LayerStack.h"
+#include "Renderer/Renderer.h"
 
 #include <SDL2/SDL.h>
 
@@ -10,20 +11,19 @@ class Application
 {
 public:
     Application();
-    ~Application();
+    virtual ~Application();
 
-    void pushLayer(Layer *layer);
-    void popLayer(Layer *layer);
-    void run();
+    virtual void pushLayer(Layer *layer);
+    virtual void popLayer(Layer *layer);
+    virtual void run();
 private:
     /* In the future these should be our classes that call SDL */
     SDL_Window *_window;
-    SDL_Renderer *_renderer;
     /****************/
+    Renderer *renderer;
 
     LayerStack _layer_stack;
     bool _running;
-    float _last_time = 0.0f;
 };
 
 

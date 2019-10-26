@@ -3,6 +3,7 @@ CCFLAGS:=-DDEBUG
 
 INCLUDE_DIRS:=Shtos/
 LIBS:=
+SOURCES = $(wildcard Shtos/**/*.cpp)
 
 ifeq ($(OS),Windows_NT)
 	CCFLAGS+=-DWINDOWS
@@ -18,6 +19,5 @@ endif
 
 CCFLAGS+=$(addprefix -I,$(INCLUDE_DIRS))
 
-
-all:
-	$(CC) $(CCFLAGS) main.cpp $(LIBS) -o main $(LDFLAGS)
+demo:
+	$(CC) $(CCFLAGS) -IDemo/ $(SOURCES) Demo/DemoLayer.cpp Demo/DemoApplication.cpp $(LIBS) -o DemoApplication $(LDFLAGS) 

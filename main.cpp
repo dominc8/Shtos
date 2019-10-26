@@ -35,7 +35,7 @@ public:
             if (_renderer)
             {
                 ++init_counter;
-                SDL_SetRenderDrawColor(_renderer, 20, 220, 20, 200);
+                SDL_SetRenderDrawBlendMode(_renderer, SDL_BLENDMODE_BLEND);
                 SHTOS_LOG_INFO("Renderer is good\n");
             }
         }
@@ -68,9 +68,15 @@ public:
 
     void render()
     {
+        const SDL_Rect rect1{100, 100, 300, 200};
+        const SDL_Rect rect2{150, 150, 100, 200};
+        SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 255);
         SDL_RenderClear(_renderer);
+        SDL_SetRenderDrawColor(_renderer, 220, 20, 20, 200);
+        SDL_RenderFillRect(_renderer, &rect1);
+        SDL_SetRenderDrawColor(_renderer, 20, 20, 220, 200);
+        SDL_RenderFillRect(_renderer, &rect2);
         SDL_RenderPresent(_renderer);
-
     }
 
     void clean()

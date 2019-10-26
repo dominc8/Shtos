@@ -61,7 +61,7 @@ void Application::popLayer(Layer *layer)
     _layer_stack.popLayer(layer);
 }
 
-void Application::Run()
+void Application::run()
 {
     float current_time, elapsed_time;
     while (_running)

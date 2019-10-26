@@ -14,7 +14,7 @@ public:
 
     void pushLayer(Layer *layer);
     void popLayer(Layer *layer);
-    void Run();
+    void run();
 private:
     /* In the future these should be our classes that call SDL */
     SDL_Window *_window;

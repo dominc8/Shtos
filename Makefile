@@ -1,6 +1,7 @@
 CXX := g++
 CXX_FLAGS := -Wfatal-errors -Wall -Wextra -Wpedantic -Wconversion -Wshadow -DDEBUG
 
+BUILD_DIR := ./build
 INCLUDE_DIRS := Shtos/
 LIBS :=
 SOURCES := $(wildcard Shtos/**/*.cpp)
@@ -13,10 +14,7 @@ BIN = DemoApplication
 
 #########################################
 
-BUILD_DIR := ./build
-
 OBJ := $(SOURCES:%.cpp=$(BUILD_DIR)/%.o)
-
 DEP := $(OBJ:%.o=%.d)
 
 ifeq ($(OS),Windows_NT)

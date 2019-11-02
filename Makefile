@@ -9,7 +9,7 @@ SOURCES := $(wildcard Shtos/**/*.cpp)
 ### DemoApplication specific settings ###
 
 INCLUDE_DIRS += Demo/
-SOURCES += Demo/DemoApplication.cpp Demo/DemoLayer.cpp
+SOURCES += $(wildcard Demo/*.cpp)
 BIN = DemoApplication
 
 #########################################
@@ -25,7 +25,7 @@ else
     UNAME_S := $(shell uname -s)
     ifeq ($(UNAME_S),Linux)
         CXX_FLAGS += -DLINUX
-	LD_FLAGS += -lSDL2
+	LD_FLAGS += -lSDL2 -lSDL2_image
     endif
 endif
 

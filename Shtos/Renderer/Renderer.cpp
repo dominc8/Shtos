@@ -1,6 +1,9 @@
 #include "Renderer/Renderer.h"
 #include "Logger/Logger.h"
+#include "AssetManager/AssetManager.h"
+
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
 SDL_Renderer* Renderer::_renderer = NULL;
 
@@ -60,5 +63,24 @@ void Renderer::FillRect(uint16_t x_pos, uint16_t y_pos, uint16_t width, uint16_t
 {
     const SDL_Rect rect{x_pos, y_pos, width, height};
     SDL_RenderFillRect(Renderer::_renderer, &rect);
+}
+
+void Renderer::DrawTexture(uint16_t texture_id, uint16_t x_pos, uint16_t y_pos, uint16_t width, uint16_t height)
+{
+    uint16_t ret_id = AssetManager::LoadTexture(_renderer, texture_id);
+    if (ret_id != texture_id)
+    {
+        SHTOS_LOG_ERR("AssetManager::LoadTexture didn't return correct id!\n");
+    }
+    else
+    {
+        SDL_Texture *texture = AssetManager::GetTexture(texture_id);
+        const SDL_Rect dstrect{x_pos, y_pos, width, height};
+        int error_value = SDL_RenderCopy(_renderer, texture, NULL, &dstrect);
+        if (error_value)
+        {
+            SHTOS_LOG_ERR("SDL_RenderCopy returned %d: %s\n!", error_value, SDL_GetError());
+        }
+    }
 }
 

@@ -1,5 +1,6 @@
 #include "Application/Application.h"
 #include "Logger/Logger.h"
+#include "AssetManager/AssetManager.h"
 
 #include <SDL2/SDL.h>
 
@@ -40,12 +41,14 @@ Application::Application()
         SHTOS_LOG_ERR("Couldn't initialize SDL");
         _running = false;
     }
+    AssetManager::Initialize();
     assert(_running);
 }
 
 Application::~Application()
 {
     SHTOS_LOG_INFO("Application destructor");
+    AssetManager::Deinitialize();
     Renderer::Deinitialize();
     SDL_DestroyWindow(_window);
     SDL_Quit();

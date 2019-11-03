@@ -8,7 +8,7 @@
 
 struct Asset
 {
-    Asset(const char *filepath, AssetType type, void *data = NULL) : path(filepath), type(type), data(data) {}
+    Asset(const char *filepath, AssetType init_type, void *init_data = NULL) : path(filepath), type(init_type), data(init_data) {}
 
     const std::string path;
     AssetType type;
@@ -18,6 +18,7 @@ struct Asset
 std::vector<Asset*> AssetManager::_assets;
 uint16_t AssetManager::_size = 0;
 bool AssetManager::_initialized = false;
+char *AssetManager::_base_path = NULL;
 
 void AssetManager::Initialize()
 {
@@ -26,6 +27,7 @@ void AssetManager::Initialize()
         SHTOS_LOG_INFO("Initializing AssetManager!\n");
         _assets.reserve(10);
         _size = 0;
+        _base_path = SDL_GetBasePath();
         _initialized = true;
     }
 }
@@ -48,6 +50,7 @@ void AssetManager::Deinitialize()
         delete _assets[i];
     }
     _size = 0;
+    SDL_free(_base_path);
     _initialized = false;
 }
 
@@ -81,10 +84,14 @@ uint16_t AssetManager::LoadTextureFile(const char* filepath)
         }
     }
     SHTOS_LOG_INFO("Loading %s texture file as surface with id %u\n", filepath, _size);
-    SDL_Surface *surface_ptr = IMG_Load(filepath);
+    char absolute_path[200];
+    strcpy(absolute_path, _base_path);
+    strcpy(absolute_path + strlen(_base_path), filepath);
+    SDL_Surface *surface_ptr = IMG_Load(absolute_path);
     if (NULL == surface_ptr)
     {
-        SHTOS_LOG_ERR("Couldn't load %s texture file!\n", filepath);
+        SHTOS_LOG_ERR("Couldn't load %s texture file!\n", absolute_path);
+        SHTOS_LOG_ERR("SDL_ERROR: %s\n", SDL_GetError());
         return -1;
     }
     Asset *newSurface = new Asset(filepath, AssetType::SURFACE);

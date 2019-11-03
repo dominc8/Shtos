@@ -20,7 +20,7 @@ DEP := $(OBJ:%.o=%.d)
 ifeq ($(OS),Windows_NT)
     CXX_FLAGS += -DWINDOWS
     INCLUDE_DIRS += SDL/include/
-    LIBS += SDL/lib/win64/SDL2.lib SDL/lib/win64/SDL2.dll SDL/lib/win64/SDL2main.lib
+    LIBS += SDL/lib/win64/SDL2.lib SDL/lib/win64/SDL2.dll SDL/lib/win64/SDL2main.lib SDL/lib/win64/SDL2_image.dll SDL/lib/win64/libjpeg-9.dll SDL/lib/win64/zlib1.dll SDL/lib/win64/libpng16-16.dll
 else
     UNAME_S := $(shell uname -s)
     ifeq ($(UNAME_S),Linux)

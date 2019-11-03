@@ -31,6 +31,7 @@ private:
     static std::vector<Asset*> _assets;
     static uint16_t _size;
     static bool _initialized;
+    static char *_base_path;
 };
 
 #endif /* ASSETMANAGER_H */

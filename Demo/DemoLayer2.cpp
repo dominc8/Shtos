@@ -8,8 +8,8 @@ DemoLayer2::DemoLayer2() : Layer("DemoLayer2") {}
 
 void DemoLayer2::onAttach()
 {
-    _spain_texture_id = AssetManager::LoadTextureFile("/home/dominik/repos/Shtos/Demo/assets/love_from_spain.jpg");
-    _wpww_texture_id = AssetManager::LoadTextureFile("/home/dominik/repos/Shtos/Demo/assets/wpww.png");
+    _spain_texture_id = AssetManager::LoadTextureFile("../Demo/assets/love_from_spain.jpg");
+    _wpww_texture_id = AssetManager::LoadTextureFile("../Demo/assets/wpww.png");
 }
 
 void DemoLayer2::onDetach()

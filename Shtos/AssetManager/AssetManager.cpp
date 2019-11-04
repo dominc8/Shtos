@@ -34,10 +34,10 @@ void AssetManager::Initialize()
 
 void AssetManager::Deinitialize()
 {
+    SHTOS_LOG_INFO("Deinitializing AssetManager\n");
     // calling "destructors" for every asset
     for (uint16_t i = 0; i < _size; ++i)
     {
-        SHTOS_LOG_INFO("Deinitializing AssetManager\n");
         // this actually could (and probably should) be moved to ~Asset
         if (AssetType::SURFACE == _assets[i]->type)
         {

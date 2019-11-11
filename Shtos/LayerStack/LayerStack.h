@@ -1,9 +1,9 @@
 #ifndef LAYERSTACK_H
 #define LAYERSTACK_H
 
-#include <vector>
-
 #include "Layer/Layer.h"
+
+#include <vector>
 
 class LayerStack
 {

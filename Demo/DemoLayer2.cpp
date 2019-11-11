@@ -1,7 +1,8 @@
+#include "AssetManager/AssetManager.h"
 #include "DemoLayer2.h"
 #include "Logger/Logger.h"
 #include "Renderer/Renderer.h"
-#include "AssetManager/AssetManager.h"
+
 #include <SDL2/SDL.h>
 
 DemoLayer2::DemoLayer2() : Layer("DemoLayer2") {}

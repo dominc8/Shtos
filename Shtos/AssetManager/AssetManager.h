@@ -1,8 +1,9 @@
 #ifndef ASSETMANAGER_H
 #define ASSETMANAGER_H
 
-#include <vector>
 #include <SDL2/SDL.h>
+
+#include <vector>
 
 struct Asset;
 

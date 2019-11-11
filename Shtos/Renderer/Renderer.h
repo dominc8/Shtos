@@ -1,9 +1,9 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 
-#include "stdint.h"
-
 #include <SDL2/SDL.h>
+
+#include <stdint.h>
 
 class Renderer
 {

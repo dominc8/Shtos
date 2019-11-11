@@ -1,8 +1,8 @@
 #include "Application/EntryPoint.h"
 #include "Application/Application.h"
-#include "Logger/Logger.h"
 #include "DemoLayer.h"
 #include "DemoLayer2.h"
+#include "Logger/Logger.h"
 
 class DemoApplication : public Application
 {

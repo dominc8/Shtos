@@ -3,7 +3,7 @@
 
 #include "Layer/Layer.h"
 
-#include "stdint.h"
+#include <stdint.h>
 
 class DemoLayer2 : public Layer
 {

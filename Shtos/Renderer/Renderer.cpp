@@ -1,6 +1,6 @@
-#include "Renderer/Renderer.h"
-#include "Logger/Logger.h"
 #include "AssetManager/AssetManager.h"
+#include "Logger/Logger.h"
+#include "Renderer/Renderer.h"
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>

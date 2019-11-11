@@ -1,14 +1,33 @@
 #include "AssetManager/AssetManager.h"
 #include "Logger/Logger.h"
-#include "string.h"
-#include <string>
-#include "assert.h"
+
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
+#include <assert.h>
+#include <string.h>
+#include <string>
+
 struct Asset
 {
-    Asset(const char *filepath, AssetType init_type, void *init_data = NULL) : path(filepath), type(init_type), data(init_data) {}
+    Asset(const char *filepath, AssetType init_type, void *init_data = NULL) : path(filepath), type(init_type), data(init_data) 
+    {
+        SHTOS_LOG_INFO("Creating Asset with path %s\n", path.c_str());
+    }
+
+    ~Asset()
+    {
+        if (AssetType::SURFACE == type)
+        {
+            SHTOS_LOG_INFO("Free Surface %s\n", path.c_str());
+            SDL_FreeSurface((SDL_Surface*)data);
+        }
+        else if (AssetType::TEXTURE == type)
+        {
+            SHTOS_LOG_INFO("Destroy Texture %s\n", path.c_str());
+            SDL_DestroyTexture((SDL_Texture*)data);
+        }
+    }
 
     const std::string path;
     AssetType type;
@@ -35,18 +54,8 @@ void AssetManager::Initialize()
 void AssetManager::Deinitialize()
 {
     SHTOS_LOG_INFO("Deinitializing AssetManager\n");
-    // calling "destructors" for every asset
     for (uint16_t i = 0; i < _size; ++i)
     {
-        // this actually could (and probably should) be moved to ~Asset
-        if (AssetType::SURFACE == _assets[i]->type)
-        {
-            SDL_FreeSurface((SDL_Surface*)_assets[i]->data);
-        }
-        else if (AssetType::TEXTURE == _assets[i]->type)
-        {
-            SDL_DestroyTexture((SDL_Texture*)_assets[i]->data);
-        }
         delete _assets[i];
     }
     _size = 0;
@@ -94,7 +103,7 @@ uint16_t AssetManager::LoadTextureFile(const char* filepath)
         SHTOS_LOG_ERR("SDL_ERROR: %s\n", SDL_GetError());
         return -1;
     }
-    Asset *newSurface = new Asset(filepath, AssetType::SURFACE);
+    Asset *newSurface = new Asset(absolute_path, AssetType::SURFACE);
     newSurface->data = surface_ptr;
     _assets.emplace_back(newSurface);
     ++_size;

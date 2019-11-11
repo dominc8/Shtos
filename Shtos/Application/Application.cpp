@@ -1,11 +1,11 @@
 #include "Application/Application.h"
-#include "Logger/Logger.h"
 #include "AssetManager/AssetManager.h"
+#include "Logger/Logger.h"
 
 #include <SDL2/SDL.h>
 
+#include <assert.h>
 #include <chrono>
-#include "assert.h"
 
 Application::Application()
 {

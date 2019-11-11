@@ -1,5 +1,6 @@
 #include "LayerStack/LayerStack.h"
 #include "Logger/Logger.h"
+
 #include <algorithm>
 
 LayerStack::LayerStack()

@@ -1,5 +1,6 @@
 #include "DemoLayer.h"
 #include "Renderer/Renderer.h"
+
 #include <SDL2/SDL.h>
 
 DemoLayer::DemoLayer() : Layer("DemoLayer") {}

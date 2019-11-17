@@ -67,7 +67,7 @@ void EventHandler::MainHandler()
         SHTOS_LOG_INFO("S RELEASED");
     }
 
-    MouseImplementation();
+    //MouseImplementation();
 
     UpdatePrevInput();
 }

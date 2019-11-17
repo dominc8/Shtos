@@ -12,8 +12,10 @@ public:
         SHTOS_LOG_INFO("Demo Application starts!");
         pushLayer(new DemoLayer());
         pushLayer(new DemoLayer2());
+
     };
     ~DemoApplication(){
+
         SHTOS_LOG_INFO("Demo Application ends!");
     };
 };

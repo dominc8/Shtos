@@ -84,6 +84,8 @@ void Application::run()
         elapsed_time = std::chrono::duration<float>(current_time - last_time).count();
         last_time = current_time;
 
+        myEventHandler->Update();
+
         SDL_Event event;
         while(SDL_PollEvent(&event) != 0)
         {
@@ -93,17 +95,20 @@ void Application::run()
             }
         }
 
-        myEventHandler->MainHandler();
+        //myEventHandler->MainHandler();
 
         /* Handling events here (loop through all stored events in a queue for every layer)
          * or in loop below (call layer->handleEvents() or sth like that and there layer will decide which events it is interested in */
         Renderer::SetColor(0, 0, 0, 255);
         Renderer::Clear();
+        myEventHandler->Update();
 
         for (Layer *layer : _layer_stack)
         {
-            layer->onUpdate(elapsed_time);
+            layer->onUpdate(elapsed_time, myEventHandler);
         }
+
+        myEventHandler->UpdatePrevInput();
         Renderer::Present();
     }
 }

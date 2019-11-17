@@ -2,6 +2,8 @@
 #define DEMOLAYER_H
 
 #include "Layer/Layer.h"
+#include "EventHandler/EventHandler.h"
+#include "Logger/Logger.h"
 
 class DemoLayer : public Layer
 {
@@ -11,7 +13,7 @@ public:
 
     virtual void onAttach();
     virtual void onDetach();
-    virtual void onUpdate(float elapsed_time);
+    virtual void onUpdate(float elapsed_time, EventHandler *myEventHandler);
 };
 
 #endif /* DEMOLAYER_H */

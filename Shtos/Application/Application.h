@@ -4,6 +4,7 @@
 #include "Layer/Layer.h"
 #include "LayerStack/LayerStack.h"
 #include "Renderer/Renderer.h"
+#include "EventHandler/EventHandler.h"
 
 #include <SDL2/SDL.h>
 
@@ -24,6 +25,7 @@ private:
 
     LayerStack _layer_stack;
     bool _running;
+    EventHandler* myEventHandler;
 };
 
 

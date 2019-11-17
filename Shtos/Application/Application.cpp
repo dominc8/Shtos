@@ -1,6 +1,7 @@
 #include "Application/Application.h"
 #include "AssetManager/AssetManager.h"
 #include "Logger/Logger.h"
+#include "EventHandler/EventHandler.h"
 
 #include <SDL2/SDL.h>
 
@@ -14,6 +15,7 @@ Application::Application()
     if (SDL_Init(SDL_INIT_EVERYTHING) == 0)
     {
         SHTOS_LOG_INFO("SDL_Init is good");
+
         _window = SDL_CreateWindow("Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
         if (_window)
         {
@@ -50,7 +52,10 @@ Application::~Application()
     SHTOS_LOG_INFO("Application destructor");
     AssetManager::Deinitialize();
     Renderer::Deinitialize();
-    SDL_DestroyWindow(_window);
+
+    EventHandler::Release();
+    myEventHandler = NULL;
+
     SDL_Quit();
 }
 
@@ -68,6 +73,9 @@ void Application::run()
 {
     std::chrono::system_clock::time_point last_time, current_time;
     last_time = std::chrono::system_clock::now();
+
+    myEventHandler = EventHandler::Instance();
+
     float elapsed_time;
     while (_running)
     {
@@ -76,15 +84,15 @@ void Application::run()
         last_time = current_time;
 
         SDL_Event event;
-        SDL_PollEvent(&event);
-        switch (event.type)
+        while(SDL_PollEvent(&event) != 0)
         {
-        case SDL_QUIT:
+            if(event.type == SDL_QUIT)
+            {
                 _running = false;
-                break;
-            default:
-                break;
+            }
         }
+
+        myEventHandler->MainHandler();
 
         /* Handling events here (loop through all stored events in a queue for every layer)
          * or in loop below (call layer->handleEvents() or sth like that and there layer will decide which events it is interested in */

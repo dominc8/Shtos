@@ -22,10 +22,6 @@ void DemoLayer::onUpdate(float elapsed_time, EventHandler *myEventHandler)
     {
         SHTOS_LOG_INFO("Layer 1: W PRESSED");
     }
-    if(myEventHandler->KeyDown(SDL_SCANCODE_W))
-    {
-        SHTOS_LOG_INFO("Layer 1: W DOWN");
-    }
     if(myEventHandler->KeyReleased(SDL_SCANCODE_W))
     {
         SHTOS_LOG_INFO("Layer 1: W RELEASED");

@@ -56,6 +56,7 @@ Application::~Application()
     EventHandler::Release();
     myEventHandler = NULL;
 
+    SDL_DestroyWindow(_window);
     SDL_Quit();
 }
 

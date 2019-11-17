@@ -1,6 +1,8 @@
 #ifndef LAYER_H
 #define LAYER_H
 
+#include "EventHandler/EventHandler.h"
+
 class Layer
 {
 public:
@@ -9,7 +11,7 @@ public:
 
     virtual void onAttach() {}
     virtual void onDetach() {}
-    virtual void onUpdate(float elapsed_time) {}
+    virtual void onUpdate(float elapsed_time, EventHandler *myEventHandler) {}
     // TODO: After adding Event management virtual void onEvent(Event& event) {}
     //       or handleEvents() or whatever
 

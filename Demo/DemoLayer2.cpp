@@ -17,8 +17,36 @@ void DemoLayer2::onDetach()
 {
 }
 
-void DemoLayer2::onUpdate(float elapsed_time)
+void DemoLayer2::onUpdate(float elapsed_time, EventHandler *myEventHandler)
 {
+    //W BUTTON implementation
+    if(myEventHandler->KeyPressed(SDL_SCANCODE_W))
+    {
+        SHTOS_LOG_INFO("Layer 2: W PRESSED");
+    }
+    if(myEventHandler->KeyDown(SDL_SCANCODE_W))
+    {
+        SHTOS_LOG_INFO("Layer 2: W DOWN");
+    }
+    if(myEventHandler->KeyReleased(SDL_SCANCODE_W))
+    {
+        SHTOS_LOG_INFO("Layer 2: W RELEASED");
+    }
+
+
+    if(myEventHandler->KeyPressed(SDL_SCANCODE_S))
+    {
+        SHTOS_LOG_INFO("Layer 2: S PRESSED");
+    }
+    if(myEventHandler->KeyDown(SDL_SCANCODE_S))
+    {
+        SHTOS_LOG_INFO("Layer 2: S DOWN");
+    }
+    if(myEventHandler->KeyReleased(SDL_SCANCODE_S))
+    {
+        SHTOS_LOG_INFO("Layer 2: S RELEASED");
+    }
+
     Renderer::DrawTexture(_wpww_texture_id, 100, 250, 300, 300);
     Renderer::DrawTexture(_spain_texture_id, 500, 0, 300, 300);
     Renderer::DrawTexture(_spain_texture_id, {500, 400, 50, 50});

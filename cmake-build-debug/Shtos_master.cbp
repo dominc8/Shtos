@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Shtos_master"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Shtos_master">
+				<Option output="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Shtos_master.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Demo"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Application"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/AssetManager"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Layer"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/LayerStack"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Logger"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Renderer"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/c++"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/c++/x86_64-pc-cygwin"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/c++/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/../../../../lib/../include/w32api"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 Shtos_master"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Shtos_master/fast">
+				<Option output="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Shtos_master.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Demo"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Application"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/AssetManager"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Layer"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/LayerStack"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Logger"/>
+					<Add directory="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Renderer"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/c++"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/c++/x86_64-pc-cygwin"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include/c++/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/../../../../lib/../include/w32api"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 Shtos_master/fast"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j4 -f &quot;/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Demo/DemoApplication.cpp">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Demo/DemoLayer.cpp">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Demo/DemoLayer.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Demo/DemoLayer2.cpp">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Demo/DemoLayer2.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Demo/assets/love_from_spain.jpg">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Demo/assets/wpww.png">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_assert.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_atomic.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_audio.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_bits.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_blendmode.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_clipboard.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_config.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_config_android.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_config_iphoneos.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_config_macosx.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_config_minimal.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_config_os2.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_config_pandora.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_config_psp.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_config_windows.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_config_winrt.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_config_wiz.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_copying.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_cpuinfo.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_egl.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_endian.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_error.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_events.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_filesystem.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_gamecontroller.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_gesture.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_haptic.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_hints.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_image.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_joystick.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_keyboard.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_keycode.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_loadso.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_log.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_main.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_messagebox.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_metal.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_mouse.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_mutex.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_name.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_opengl.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_opengl_glext.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_opengles.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_opengles2.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_opengles2_gl2.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_opengles2_gl2ext.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_opengles2_gl2platform.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_opengles2_khrplatform.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_pixels.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_platform.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_power.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_quit.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_rect.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_render.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_revision.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_rwops.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_scancode.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_sensor.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_shape.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_stdinc.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_surface.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_system.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_syswm.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_test.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_test_assert.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_test_common.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_test_compare.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_test_crc32.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_test_font.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_test_fuzzer.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_test_harness.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_test_images.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_test_log.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_test_md5.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_test_memory.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_test_random.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_thread.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_timer.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_touch.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_types.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_version.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_video.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/SDL_vulkan.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/begin_code.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/include/SDL2/close_code.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/lib/win32/SDL2.dll">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/lib/win32/SDL2.lib">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/lib/win32/SDL2main.lib">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/lib/win64/SDL2.dll">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/lib/win64/SDL2.lib">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/lib/win64/SDL2_image.dll">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/lib/win64/SDL2main.lib">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/lib/win64/libjpeg-9.dll">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/lib/win64/libpng16-16.dll">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/SDL/lib/win64/zlib1.dll">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Application/Application.cpp">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Application/Application.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Application/EntryPoint.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/AssetManager/AssetManager.cpp">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/AssetManager/AssetManager.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Layer/Layer.cpp">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Layer/Layer.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/LayerStack/LayerStack.cpp">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/LayerStack/LayerStack.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Logger/Logger.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Renderer/Renderer.cpp">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/Shtos/Renderer/Renderer.h">
+			<Option target="Shtos_master"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Mateusz/Desktop/Shtos-master/Shtos-master/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

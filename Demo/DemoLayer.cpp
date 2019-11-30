@@ -18,6 +18,7 @@ void DemoLayer::onDetach()
 void DemoLayer::onUpdate(float elapsed_time, EventHandler *myEventHandler)
 {
     //W BUTTON implementation
+
     if(myEventHandler->KeyPressed(SDL_SCANCODE_W))
     {
         SHTOS_LOG_INFO("Layer 1: W PRESSED");

@@ -23,15 +23,23 @@ void EventHandler::Release()
 
 EventHandler::EventHandler()
 {
-    allowEvents = true;
     keyboardState = SDL_GetKeyboardState(&keyLength);
     prevKeyboardState = new Uint8[keyLength];
+    enableKeyboardState = new Uint8[keyLength];
+    memcpy(enableKeyboardState, keyboardState, keyLength);
     memcpy(prevKeyboardState, keyboardState, keyLength);
+
+    //Enable all events
+    for(int i = 0; i < keyLength; ++i)
+    {
+        enableKeyboardState[i] = 1;
+    }
 }
 
 EventHandler::~EventHandler()
 {
     delete[] prevKeyboardState;
+    delete[] enableKeyboardState;
     prevKeyboardState = NULL;
 }
 
@@ -72,14 +80,14 @@ void EventHandler::MainHandler()
     UpdatePrevInput();
 }
 
-void EventHandler::EnableEventHandler()
+void EventHandler::EnableEvent(SDL_Scancode scanCode)
 {
-    allowEvents = true;
+    enableKeyboardState[scanCode] = 1;
 }
 
-void EventHandler::DisableEventHandler()
+void EventHandler::DisableEvent(SDL_Scancode scanCode)
 {
-    allowEvents = false;
+    enableKeyboardState[scanCode] = 0;
 }
 
 
@@ -87,17 +95,17 @@ void EventHandler::DisableEventHandler()
 
 bool EventHandler::KeyDown(SDL_Scancode scanCode)
 {
-    return keyboardState[scanCode];
+    return keyboardState[scanCode] && enableKeyboardState[scanCode];
 }
 
 bool EventHandler::KeyPressed(SDL_Scancode scanCode)
 {
-    return !prevKeyboardState[scanCode] && keyboardState[scanCode];
+    return !prevKeyboardState[scanCode] && keyboardState[scanCode] && enableKeyboardState[scanCode];
 }
 
 bool EventHandler::KeyReleased(SDL_Scancode scanCode)
 {
-    return prevKeyboardState[scanCode] && !keyboardState[scanCode];
+    return prevKeyboardState[scanCode] && !keyboardState[scanCode] && enableKeyboardState[scanCode];
 }
 
 

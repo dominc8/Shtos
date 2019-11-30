@@ -30,8 +30,10 @@ void DemoLayer2::onUpdate(float elapsed_time, EventHandler *myEventHandler)
     {
         SHTOS_LOG_INFO("Layer 2: W RELEASED");
     }
-
+    
     //S BUTTON implementation
+    myEventHandler ->DisableEvent(SDL_SCANCODE_S);
+
     if(myEventHandler->KeyPressed(SDL_SCANCODE_S))
     {
         SHTOS_LOG_INFO("Layer 2: S PRESSED");
@@ -41,6 +43,7 @@ void DemoLayer2::onUpdate(float elapsed_time, EventHandler *myEventHandler)
     {
         SHTOS_LOG_INFO("Layer 2: S RELEASED");
     }
+    myEventHandler ->EnableEvent(SDL_SCANCODE_S);
 
     //A BUTTON implementation
     if(myEventHandler->KeyPressed(SDL_SCANCODE_A))

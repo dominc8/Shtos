@@ -26,11 +26,11 @@ void DemoLayer::handleEvents(EventHandler *myEventHandler)
 {
     if(myEventHandler->KeyPressed(SDL_SCANCODE_W))
     {
-        SHTOS_LOG_INFO("Layer 1: W PRESSED");
+        //SHTOS_LOG_INFO("Layer 1: W PRESSED");
     }
     if(myEventHandler->KeyReleased(SDL_SCANCODE_W))
     {
-        SHTOS_LOG_INFO("Layer 1: W RELEASED");
+        //SHTOS_LOG_INFO("Layer 1: W RELEASED");
     }
 }
 

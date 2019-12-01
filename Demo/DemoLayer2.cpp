@@ -11,14 +11,14 @@ DemoLayer2::DemoLayer2() : Layer("DemoLayer2") {}
 
 void DemoLayer2::onAttach() {
     _enemy_texture_id = AssetManager::LoadTextureFile("../Demo/assets/commie.png");
-    _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
-    _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
-    _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
-    _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
-    _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100);
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100);
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100);
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100);
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100);
 
     _player_texture_id = AssetManager::LoadTextureFile("../Demo/assets/czc.jpg");
-    _player = new Player(_player_texture_id, 50, 70, 200, 100);
+    _player = new Player(_player_texture_id, 50, 70, 100, 100);
 }
 
 void DemoLayer2::onDetach()
@@ -30,8 +30,12 @@ void DemoLayer2::onUpdate(float elapsed_time)
 {
     for (auto &enemy : _enemies)
     {
-        enemy.move(elapsed_time * ((std::rand() % 1001) - 500), elapsed_time * ((std::rand() % 1001) - 500));
-        enemy.render();
+        if(!enemy.isDead())
+        {
+            enemy.move(elapsed_time * ((std::rand() % 1001) - 500), elapsed_time * ((std::rand() % 1001) - 500));
+            enemy.render();
+            enemy.attack(_player);
+        }
     }
 
     _player->move(elapsed_time * _player_motion_x, elapsed_time * _player_motion_y);
@@ -47,29 +51,39 @@ void DemoLayer2::handleEvents(EventHandler *myEventHandler)
     //W BUTTON implementation
     if(myEventHandler->KeyDown(SDL_SCANCODE_W))
     {
-        SHTOS_LOG_INFO("Layer 2: W DOWN");
+        //SHTOS_LOG_INFO("Layer 2: W DOWN");
         _player_motion_y -= scale;
     }
 
     //S BUTTON implementation
     if(myEventHandler->KeyDown(SDL_SCANCODE_S))
     {
-        SHTOS_LOG_INFO("Layer 2: S DOWN");
+        //SHTOS_LOG_INFO("Layer 2: S DOWN");
         _player_motion_y += scale;
     }
 
     //A BUTTON implementation
     if(myEventHandler->KeyDown(SDL_SCANCODE_A))
     {
-        SHTOS_LOG_INFO("Layer 2: A DOWN");
+        //SHTOS_LOG_INFO("Layer 2: A DOWN");
         _player_motion_x -= scale;
     }
 
     //D BUTTON implementation
     if(myEventHandler->KeyDown(SDL_SCANCODE_D))
     {
-        SHTOS_LOG_INFO("Layer 2: D DOWN");
+        //SHTOS_LOG_INFO("Layer 2: D DOWN");
         _player_motion_x += scale;
+    }
+
+    if(myEventHandler->KeyPressed(SDL_SCANCODE_SPACE))
+    {
+        SHTOS_LOG_INFO("SWING THAA BLAAAAAAADE\n");
+        for (auto &enemy : _enemies)
+        {
+           _player->attack(enemy);
+        }
+        printf("Your hp:%d\n", _player->getHealth());
     }
 }
 

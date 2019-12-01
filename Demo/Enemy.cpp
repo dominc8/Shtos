@@ -15,5 +15,10 @@ Enemy::~Enemy()
 
 void Enemy::attack(Entity *Player)
 {
+    uint16_t distance =(uint16_t)sqrt(pow(Player->getXPos() - this->getXPos(), 2) + pow(Player->getYPos() - this->getYPos(), 2));
 
+    if(this->getAttackRadius() >= distance)
+    {
+        Player->setHealth(Player->getHealth() - 1);
+    }
 }

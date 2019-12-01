@@ -32,12 +32,47 @@ void Entity::move(float x_offset, float y_offset)
 
 bool Entity::isDead()
 {
-    if( _health == 0)
-    {
-        return false;
-    }
-    else
+    if( _health <= 0)
     {
         return true;
     }
+    else
+    {
+        return false;
+    }
+}
+
+uint16_t Entity::getAttackRadius()
+{
+    return _attack_radius;
+}
+
+uint16_t Entity::getHealth()
+{
+    return _health;
+}
+
+float Entity::getXPos()
+{
+    return _x_pos;
+}
+
+float Entity::getYPos()
+{
+    return _y_pos;
+}
+
+void Entity::setHealth(uint16_t inHealth)
+{
+    _health = inHealth;
+}
+
+void Entity::setXPos(float inX)
+{
+    _x_pos = inX;
+}
+
+void Entity::setYPos(float inY)
+{
+    _y_pos = inY;
 }

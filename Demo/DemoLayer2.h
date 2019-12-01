@@ -6,6 +6,7 @@
 #include "EventHandler/EventHandler.h"
 #include "Entity.h"
 #include "Player.h"
+#include "Enemy.h"
 
 #include <stdint.h>
 #include <vector>
@@ -22,7 +23,7 @@ public:
     virtual void handleEvents(EventHandler *myEventHandler);
 private:
     uint16_t _enemy_texture_id;
-    std::vector<Entity> _enemies;
+    std::vector<Enemy> _enemies;
 
     uint16_t _player_texture_id;
     float _player_motion_x = 0.0f;

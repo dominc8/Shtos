@@ -12,9 +12,10 @@ private:
     static EventHandler* sInstance;
 
     Uint8* prevKeyboardState;
-    const Uint8* keyboardState;
+    Uint8* enableKeyboardState;
+    Uint8* keyboardState;
+    const Uint8* keyboardStateTmp;
     int keyLength;
-    bool allowEvents;
 
     Uint16 mouseState;
     Uint16 prevMouseState;
@@ -34,8 +35,10 @@ public:
     void MainHandler();
     void Update();
     void UpdatePrevInput();
-    void EnableEventHandler();
-    void DisableEventHandler();
+
+    void ClearEvent(SDL_Scancode scanCode);
+    int GetState(SDL_Scancode scanCode);
+    int GetStateClear(SDL_Scancode scanCode);
 
     bool KeyDown(SDL_Scancode scanCode);
     bool KeyPressed(SDL_Scancode scanCode);

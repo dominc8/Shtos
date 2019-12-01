@@ -14,6 +14,7 @@ public:
     virtual void onUpdate(float elapsed_time, EventHandler *myEventHandler) {}
     // TODO: After adding Event management virtual void onEvent(Event& event) {}
     //       or handleEvents() or whatever
+    virtual void handleEvents(){}
 
     const char* getName() { return _name; }
 

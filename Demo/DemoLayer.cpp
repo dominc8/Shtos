@@ -15,9 +15,15 @@ void DemoLayer::onDetach()
 {
 }
 
-void DemoLayer::onUpdate(float elapsed_time, EventHandler *myEventHandler)
+void DemoLayer::onUpdate(float elapsed_time)
 {
-    //W BUTTON implementation
+    Renderer::SetColor(220, 20, 20, 200);
+    Renderer::FillRect(100, 100, 300, 200);
+    Renderer::SetColor(20, 20, 220, 200);
+    Renderer::FillRect(150, 150, 100, 200);
+}
+void DemoLayer::handleEvents(EventHandler *myEventHandler)
+{
     if(myEventHandler->KeyPressed(SDL_SCANCODE_W))
     {
         SHTOS_LOG_INFO("Layer 1: W PRESSED");
@@ -26,10 +32,5 @@ void DemoLayer::onUpdate(float elapsed_time, EventHandler *myEventHandler)
     {
         SHTOS_LOG_INFO("Layer 1: W RELEASED");
     }
-
-    Renderer::SetColor(220, 20, 20, 200);
-    Renderer::FillRect(100, 100, 300, 200);
-    Renderer::SetColor(20, 20, 220, 200);
-    Renderer::FillRect(150, 150, 100, 200);
 }
 

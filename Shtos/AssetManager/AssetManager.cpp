@@ -3,6 +3,7 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_mixer.h>
 
 #include <assert.h>
 #include <string.h>
@@ -26,6 +27,11 @@ struct Asset
         {
             SHTOS_LOG_INFO("Destroy Texture %s\n", path.c_str());
             SDL_DestroyTexture((SDL_Texture*)data);
+        }
+        else if (AssetType::SOUND == type)
+        {
+            SHTOS_LOG_INFO("Destroy Sound %s\n", path.c_str());
+            Mix_FreeMusic((Mix_Music *)data);
         }
     }
 
@@ -139,5 +145,48 @@ uint16_t AssetManager::LoadTexture(SDL_Renderer *renderer, uint16_t asset_id)
         ret_id = asset_id - 1;
     }
     return ret_id;
+}
+
+uint16_t AssetManager::LoadMusic(const char *filepath)
+{
+    assert(_initialized);
+    for (uint16_t i = 0; i < _size; ++i)
+    {
+        if (!strcmp(_assets[i]->path.c_str(), filepath))
+        {
+            return i;
+        }
+    }
+    SHTOS_LOG_INFO("Loading %s sound file with id %u\n", filepath, _size);
+    char absolute_path[200];
+    strcpy(absolute_path, _base_path);
+    strcpy(absolute_path + strlen(_base_path), filepath);
+    Mix_Music *music_ptr = Mix_LoadMUS(absolute_path);
+    if (NULL == music_ptr)
+    {
+        SHTOS_LOG_ERR("Couldn't load %s sound file!\n", absolute_path);
+        SHTOS_LOG_ERR("SDL_ERROR: %s\n", SDL_GetError());
+        return -1;
+    }
+    Asset *newSound = new Asset(absolute_path, AssetType::SOUND);
+    newSound->data = music_ptr;
+    _assets.emplace_back(newSound);
+    ++_size;
+    return _size - 1;
+}
+
+bool AssetManager::PlayMusic(uint16_t music_id)
+{
+    assert(_initialized);
+    bool ret_val = false;
+    if (music_id < _size)
+    {
+        if (AssetType::SOUND == _assets[music_id]->type)
+        {
+            Mix_PlayMusic((Mix_Music *)_assets[music_id]->data, -1);
+            ret_val = true;
+        }
+    }
+    return ret_val;
 }
 

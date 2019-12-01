@@ -4,6 +4,7 @@
 #include "EventHandler/EventHandler.h"
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_mixer.h>
 
 #include <assert.h>
 #include <chrono>
@@ -37,6 +38,11 @@ Application::Application()
             SHTOS_LOG_ERR("Couldn't create window!");
             _running = false;
         }
+
+        if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+        {
+            SHTOS_LOG_ERR("Mix_OpenAudio failed: %s!", SDL_GetError());
+        }
     }
     else
     {
@@ -51,6 +57,7 @@ Application::~Application()
 {
     SHTOS_LOG_INFO("Application destructor");
     AssetManager::Deinitialize();
+    Mix_Quit();
     Renderer::Deinitialize();
 
     EventHandler::Release();

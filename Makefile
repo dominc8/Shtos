@@ -25,7 +25,7 @@ else
     UNAME_S := $(shell uname -s)
     ifeq ($(UNAME_S),Linux)
         CXX_FLAGS += -DLINUX
-	LD_FLAGS += -lSDL2 -lSDL2_image
+	LD_FLAGS += -lSDL2 -lSDL2_image -lSDL2_mixer
     endif
 endif
 

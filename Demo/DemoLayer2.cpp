@@ -10,14 +10,14 @@
 DemoLayer2::DemoLayer2() : Layer("DemoLayer2") {}
 
 void DemoLayer2::onAttach() {
-    _enemy_texture_id = AssetManager::LoadTextureFile("../Demo/assets/commie.png");
+    _enemy_texture_id = AssetManager::LoadTextureFile("../Demo/assets/saracen.png");
     _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
     _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
     _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
     _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
     _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
 
-    _player_texture_id = AssetManager::LoadTextureFile("../Demo/assets/czc.jpg");
+    _player_texture_id = AssetManager::LoadTextureFile("../Demo/assets/crusader.png");
     _player = new Player(_player_texture_id, 50, 70, 200, 100);
 }
 

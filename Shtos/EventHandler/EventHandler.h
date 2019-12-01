@@ -13,7 +13,8 @@ private:
 
     Uint8* prevKeyboardState;
     Uint8* enableKeyboardState;
-    const Uint8* keyboardState;
+    Uint8* keyboardState;
+    const Uint8* keyboardStateTmp;
     int keyLength;
 
     Uint16 mouseState;
@@ -34,8 +35,10 @@ public:
     void MainHandler();
     void Update();
     void UpdatePrevInput();
-    void EnableEvent(SDL_Scancode scanCode);
-    void DisableEvent(SDL_Scancode scanCode);
+
+    void ClearEvent(SDL_Scancode scanCode);
+    int GetState(SDL_Scancode scanCode);
+    int GetStateClear(SDL_Scancode scanCode);
 
     bool KeyDown(SDL_Scancode scanCode);
     bool KeyPressed(SDL_Scancode scanCode);

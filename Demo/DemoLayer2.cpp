@@ -18,7 +18,16 @@ void DemoLayer2::onDetach()
 {
 }
 
-void DemoLayer2::onUpdate(float elapsed_time, EventHandler *myEventHandler)
+void DemoLayer2::onUpdate(float elapsed_time)
+{
+//     Renderer::DrawTexture(_wpww_texture_id, 100, 250, 300, 300);
+//     Renderer::DrawTexture(_spain_texture_id, 500, 0, 300, 300);
+//     Renderer::DrawTexture(_spain_texture_id, {500, 400, 50, 50});
+//     Renderer::DrawTexture(_wpww_texture_id, {600, 450, 100, 100}, {200, 200, 300, 300});
+    Renderer::DrawTexture(_czc_texture_id, _x_czc, _y_czc, 79, 118);
+    Renderer::DrawTexture(_ok_texture_id, 50, 100, 150, 150);
+}
+void DemoLayer2::handleEvents(EventHandler *myEventHandler)
 {
     //W BUTTON implementation
     if(myEventHandler->KeyPressed(SDL_SCANCODE_W))
@@ -64,11 +73,4 @@ void DemoLayer2::onUpdate(float elapsed_time, EventHandler *myEventHandler)
     {
         SHTOS_LOG_INFO("Layer 2: D RELEASED");
     }
-//     Renderer::DrawTexture(_wpww_texture_id, 100, 250, 300, 300);
-//     Renderer::DrawTexture(_spain_texture_id, 500, 0, 300, 300);
-//     Renderer::DrawTexture(_spain_texture_id, {500, 400, 50, 50});
-//     Renderer::DrawTexture(_wpww_texture_id, {600, 450, 100, 100}, {200, 200, 300, 300});
-    Renderer::DrawTexture(_czc_texture_id, _x_czc, _y_czc, 79, 118);
-    Renderer::DrawTexture(_ok_texture_id, 50, 100, 150, 150);
 }
-

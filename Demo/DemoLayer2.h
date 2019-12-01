@@ -15,7 +15,9 @@ public:
 
     virtual void onAttach();
     virtual void onDetach();
-    virtual void onUpdate(float elapsed_time, EventHandler *myEventHandler);
+    virtual void onUpdate(float elapsed_time);
+    virtual void handleEvents(EventHandler *myEventHandler);
+
 private:
     uint16_t _spain_texture_id;
     uint16_t _wpww_texture_id;

@@ -13,7 +13,8 @@ public:
 
     virtual void onAttach();
     virtual void onDetach();
-    virtual void onUpdate(float elapsed_time, EventHandler *myEventHandler);
+    virtual void onUpdate(float elapsed_time);
+    virtual void handleEvents(EventHandler *myEventHandler);
 };
 
 #endif /* DEMOLAYER_H */

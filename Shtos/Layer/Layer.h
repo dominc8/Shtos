@@ -11,10 +11,8 @@ public:
 
     virtual void onAttach() {}
     virtual void onDetach() {}
-    virtual void onUpdate(float elapsed_time, EventHandler *myEventHandler) {}
-    // TODO: After adding Event management virtual void onEvent(Event& event) {}
-    //       or handleEvents() or whatever
-    virtual void handleEvents(){}
+    virtual void onUpdate(float elapsed_time) {}
+    virtual void handleEvents(EventHandler *myEventHandler){}
 
     const char* getName() { return _name; }
 

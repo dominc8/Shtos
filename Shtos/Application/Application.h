@@ -18,17 +18,13 @@ public:
     virtual void popLayer(Layer *layer);
     virtual void run();
 private:
-    /* In the future these should be our classes that call SDL */
     SDL_Window *_window;
-    /****************/
     Renderer *renderer;
 
     LayerStack _layer_stack;
     bool _running;
     EventHandler* myEventHandler;
 };
-
-
 
 #endif /* APPLICATION_H */
 

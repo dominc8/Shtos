@@ -1,5 +1,5 @@
-#ifndef SHTOS_MASTER_EVENTHANDLER_H
-#define SHTOS_MASTER_EVENTHANDLER_H
+#ifndef EVENTHANDLER_H
+#define EVENTHANDLER_H
 
 #include <SDL2/SDL.h>
 #include "string.h"
@@ -56,4 +56,5 @@ private:
 };
 
 
-#endif //SHTOS_MASTER_EVENTHANDLER_H
+#endif /* EVENTHANDLER_H */
+

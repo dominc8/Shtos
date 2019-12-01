@@ -5,61 +5,71 @@
 
 #include <SDL2/SDL.h>
 
+#include <cstdlib>
+
 DemoLayer2::DemoLayer2() : Layer("DemoLayer2") {}
 
 void DemoLayer2::onAttach() {
-    _spain_texture_id = AssetManager::LoadTextureFile("../Demo/assets/love_from_spain.jpg");
-    _wpww_texture_id = AssetManager::LoadTextureFile("../Demo/assets/wpww.png");
-    _czc_texture_id = AssetManager::LoadTextureFile("../Demo/assets/czc.jpg");
-    _ok_texture_id = AssetManager::LoadTextureFile("../Demo/assets/ok.png");
+    _enemy_texture_id = AssetManager::LoadTextureFile("../Demo/assets/ok.png");
+    _enemies.emplace_back(_enemy_texture_id, 40, 40);
+    _enemies.emplace_back(_enemy_texture_id, 40, 40);
+    _enemies.emplace_back(_enemy_texture_id, 40, 40);
+    _enemies.emplace_back(_enemy_texture_id, 40, 40);
+    _enemies.emplace_back(_enemy_texture_id, 40, 40);
+
+    _player_texture_id = AssetManager::LoadTextureFile("../Demo/assets/czc.jpg");
+    _player = new Player(_player_texture_id, 50, 70);
 }
 
 void DemoLayer2::onDetach()
 {
+    delete _player;
 }
 
 void DemoLayer2::onUpdate(float elapsed_time)
 {
-//     Renderer::DrawTexture(_wpww_texture_id, 100, 250, 300, 300);
-//     Renderer::DrawTexture(_spain_texture_id, 500, 0, 300, 300);
-//     Renderer::DrawTexture(_spain_texture_id, {500, 400, 50, 50});
-//     Renderer::DrawTexture(_wpww_texture_id, {600, 450, 100, 100}, {200, 200, 300, 300});
-    Renderer::DrawTexture(_czc_texture_id, _x_czc, _y_czc, 79, 118);
-    Renderer::DrawTexture(_ok_texture_id, 50, 100, 150, 150);
+    for (auto &enemy : _enemies)
+    {
+        enemy.move(elapsed_time * ((std::rand() % 1001) - 500), elapsed_time * ((std::rand() % 1001) - 500));
+        enemy.render();
+    }
+
+    _player->move(elapsed_time * _player_motion_x, elapsed_time * _player_motion_y);
+    _player_motion_x = 0.0f;
+    _player_motion_y = 0.0f;
+    _player->render();
 }
+
 void DemoLayer2::handleEvents(EventHandler *myEventHandler)
 {
     static const float scale = 150.0f;
+
     //W BUTTON implementation
     if(myEventHandler->KeyDown(SDL_SCANCODE_W))
     {
         SHTOS_LOG_INFO("Layer 2: W DOWN");
-        _y_czc -= elapsed_time * scale;
-        _y_czc = _y_czc < 0 ? 0 : _y_czc;
+        _player_motion_y -= scale;
     }
 
     //S BUTTON implementation
     if(myEventHandler->KeyDown(SDL_SCANCODE_S))
     {
         SHTOS_LOG_INFO("Layer 2: S DOWN");
-        _y_czc += elapsed_time * scale;
-        _y_czc = _y_czc > 482 ? 482 : _y_czc;
+        _player_motion_y += scale;
     }
 
     //A BUTTON implementation
     if(myEventHandler->KeyDown(SDL_SCANCODE_A))
     {
         SHTOS_LOG_INFO("Layer 2: A DOWN");
-        _x_czc -= elapsed_time * scale;
-        _x_czc = _x_czc < 0 ? 0 : _x_czc;
+        _player_motion_x -= scale;
     }
 
     //D BUTTON implementation
     if(myEventHandler->KeyDown(SDL_SCANCODE_D))
     {
         SHTOS_LOG_INFO("Layer 2: D DOWN");
-        _x_czc += elapsed_time * scale;
-        _x_czc = _x_czc > 721 ? 721 : _x_czc;
+        _player_motion_x += scale;
     }
 }
 

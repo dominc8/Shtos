@@ -4,8 +4,11 @@
 #include "Layer/Layer.h"
 #include "Logger/Logger.h"
 #include "EventHandler/EventHandler.h"
+#include "Entity.h"
+#include "Player.h"
 
 #include <stdint.h>
+#include <vector>
 
 class DemoLayer2 : public Layer
 {
@@ -17,13 +20,14 @@ public:
     virtual void onDetach();
     virtual void onUpdate(float elapsed_time);
     virtual void handleEvents(EventHandler *myEventHandler);
-
 private:
-    uint16_t _spain_texture_id;
-    uint16_t _wpww_texture_id;
-    uint16_t _czc_texture_id;
-    uint16_t _ok_texture_id;
-    float _x_czc, _y_czc;
+    uint16_t _enemy_texture_id;
+    std::vector<Entity> _enemies;
+
+    uint16_t _player_texture_id;
+    float _player_motion_x = 0.0f;
+    float _player_motion_y = 0.0f;
+    Player *_player;
 };
 
 #endif /* DEMOLAYER2_H */

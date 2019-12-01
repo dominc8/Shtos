@@ -2,7 +2,8 @@
 #include "Renderer/Renderer.h"
 #include "Logger/Logger.h"
 
-Entity::Entity(uint16_t texture_id, uint16_t width, uint16_t height) : _texture_id(texture_id), _width(width), _height(height)
+Entity::Entity(uint16_t texture_id, uint16_t width, uint16_t height, uint16_t attack_radius, uint16_t health) : _texture_id(texture_id), _width(width), _height(height),
+    _attack_radius(attack_radius), _health(health)
 {
     SHTOS_LOG_INFO("Creating Entity with texture_id: %d", texture_id);
 };
@@ -29,3 +30,14 @@ void Entity::move(float x_offset, float y_offset)
     if (_y_pos > 600 - _height) _y_pos = 600 - _height;
 }
 
+bool Entity::isDead()
+{
+    if( _health == 0)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}

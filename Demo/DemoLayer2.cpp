@@ -10,15 +10,15 @@
 DemoLayer2::DemoLayer2() : Layer("DemoLayer2") {}
 
 void DemoLayer2::onAttach() {
-    _enemy_texture_id = AssetManager::LoadTextureFile("../Demo/assets/ok.png");
-    _enemies.emplace_back(_enemy_texture_id, 40, 40);
-    _enemies.emplace_back(_enemy_texture_id, 40, 40);
-    _enemies.emplace_back(_enemy_texture_id, 40, 40);
-    _enemies.emplace_back(_enemy_texture_id, 40, 40);
-    _enemies.emplace_back(_enemy_texture_id, 40, 40);
+    _enemy_texture_id = AssetManager::LoadTextureFile("../Demo/assets/commie.png");
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 100, 100);
 
     _player_texture_id = AssetManager::LoadTextureFile("../Demo/assets/czc.jpg");
-    _player = new Player(_player_texture_id, 50, 70);
+    _player = new Player(_player_texture_id, 50, 70, 200, 100);
 }
 
 void DemoLayer2::onDetach()

@@ -6,15 +6,19 @@
 class Entity
 {
 public:
-    Entity(uint16_t texture_id, uint16_t width, uint16_t height);
+    Entity(uint16_t texture_id, uint16_t width, uint16_t height, uint16_t attack_radius, uint16_t health);
     virtual ~Entity();
 
     virtual void render();
+    virtual void attack(){};
+    virtual bool isDead();
     virtual void move(float x_offset, float y_offset);
 
 private:
     float _x_pos;
     float _y_pos;
+    uint16_t _health;
+    uint16_t _attack_radius;
     uint16_t _width;
     uint16_t _height;
     uint16_t _texture_id;

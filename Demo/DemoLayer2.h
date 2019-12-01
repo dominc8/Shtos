@@ -21,7 +21,7 @@ private:
     uint16_t _wpww_texture_id;
     uint16_t _czc_texture_id;
     uint16_t _ok_texture_id;
-    uint16_t _x_czc, _y_czc;
+    float _x_czc, _y_czc;
 };
 
 #endif /* DEMOLAYER2_H */

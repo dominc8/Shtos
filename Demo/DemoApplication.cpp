@@ -2,6 +2,7 @@
 #include "Application/Application.h"
 #include "DemoLayer.h"
 #include "DemoLayer2.h"
+#include "DemoLayer3.h"
 #include "Logger/Logger.h"
 
 class DemoApplication : public Application
@@ -11,7 +12,8 @@ public:
     {
         SHTOS_LOG_INFO("Demo Application starts!");
         pushLayer(new DemoLayer());
-        pushLayer(new DemoLayer2());
+//         pushLayer(new DemoLayer2());
+        pushLayer(new DemoLayer3());
 
     };
     ~DemoApplication(){

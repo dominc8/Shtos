@@ -20,54 +20,43 @@ void DemoLayer2::onDetach()
 
 void DemoLayer2::onUpdate(float elapsed_time, EventHandler *myEventHandler)
 {
+    static const float scale = 150.0f;
     //W BUTTON implementation
-    if(myEventHandler->KeyPressed(SDL_SCANCODE_W))
+    if(myEventHandler->KeyDown(SDL_SCANCODE_W))
     {
-        SHTOS_LOG_INFO("Layer 2: W PRESSED");
-        _y_czc = _y_czc < 20 ? 0 : _y_czc - 20;
-    }
-    if(myEventHandler->KeyReleased(SDL_SCANCODE_W))
-    {
-        SHTOS_LOG_INFO("Layer 2: W RELEASED");
+        SHTOS_LOG_INFO("Layer 2: W DOWN");
+        _y_czc -= elapsed_time * scale;
+        _y_czc = _y_czc < 0 ? 0 : _y_czc;
     }
 
     //S BUTTON implementation
-    if(myEventHandler->KeyPressed(SDL_SCANCODE_S))
+    if(myEventHandler->KeyDown(SDL_SCANCODE_S))
     {
-        SHTOS_LOG_INFO("Layer 2: S PRESSED");
-        _y_czc = _y_czc > 580 ? 600 : _y_czc + 20;
-    }
-    if(myEventHandler->KeyReleased(SDL_SCANCODE_S))
-    {
-        SHTOS_LOG_INFO("Layer 2: S RELEASED");
+        SHTOS_LOG_INFO("Layer 2: S DOWN");
+        _y_czc += elapsed_time * scale;
+        _y_czc = _y_czc > 482 ? 482 : _y_czc;
     }
 
     //A BUTTON implementation
-    if(myEventHandler->KeyPressed(SDL_SCANCODE_A))
+    if(myEventHandler->KeyDown(SDL_SCANCODE_A))
     {
-        SHTOS_LOG_INFO("Layer 2: A PRESSED");
-        _x_czc = _x_czc < 20 ? 0 : _x_czc - 20;
-    }
-    if(myEventHandler->KeyReleased(SDL_SCANCODE_A))
-    {
-        SHTOS_LOG_INFO("Layer 2: A RELEASED");
+        SHTOS_LOG_INFO("Layer 2: A DOWN");
+        _x_czc -= elapsed_time * scale;
+        _x_czc = _x_czc < 0 ? 0 : _x_czc;
     }
 
     //D BUTTON implementation
-    if(myEventHandler->KeyPressed(SDL_SCANCODE_D))
+    if(myEventHandler->KeyDown(SDL_SCANCODE_D))
     {
-        SHTOS_LOG_INFO("Layer 2: D PRESSED");
-        _x_czc = _x_czc > 780 ? 800 : _x_czc + 20;
-    }
-    if(myEventHandler->KeyReleased(SDL_SCANCODE_D))
-    {
-        SHTOS_LOG_INFO("Layer 2: D RELEASED");
+        SHTOS_LOG_INFO("Layer 2: D DOWN");
+        _x_czc += elapsed_time * scale;
+        _x_czc = _x_czc > 721 ? 721 : _x_czc;
     }
 //     Renderer::DrawTexture(_wpww_texture_id, 100, 250, 300, 300);
 //     Renderer::DrawTexture(_spain_texture_id, 500, 0, 300, 300);
 //     Renderer::DrawTexture(_spain_texture_id, {500, 400, 50, 50});
 //     Renderer::DrawTexture(_wpww_texture_id, {600, 450, 100, 100}, {200, 200, 300, 300});
-    Renderer::DrawTexture(_czc_texture_id, _x_czc, _y_czc, 79, 118);
+    Renderer::DrawTexture(_czc_texture_id, (uint16_t)_x_czc, (uint16_t)_y_czc, 79, 118);
     Renderer::DrawTexture(_ok_texture_id, 50, 100, 150, 150);
 }
 

@@ -1,7 +1,7 @@
 #include "AssetManager/AssetManager.h"
 #include "DemoLayer.h"
 #include "Renderer/Renderer.h"
-
+#include "Logger/Logger.h"
 
 #include <SDL2/SDL.h>
 
@@ -9,6 +9,10 @@ DemoLayer::DemoLayer() : Layer("DemoLayer") {}
 
 void DemoLayer::onAttach()
 {
+    _bg_texture_id = AssetManager::LoadTextureFile("../Demo/assets/bg.jpg");
+
+    _bg_music_id = AssetManager::LoadMusic("../Demo/assets/the-chant.mp3");
+    AssetManager::PlayMusic(_bg_music_id);
 }
 
 void DemoLayer::onDetach()
@@ -17,20 +21,9 @@ void DemoLayer::onDetach()
 
 void DemoLayer::onUpdate(float elapsed_time)
 {
-    Renderer::SetColor(220, 20, 20, 200);
-    Renderer::FillRect(100, 100, 300, 200);
-    Renderer::SetColor(20, 20, 220, 200);
-    Renderer::FillRect(150, 150, 100, 200);
+    Renderer::DrawTexture(_bg_texture_id, 0, 0, 800, 600);
 }
 void DemoLayer::handleEvents(EventHandler *myEventHandler)
 {
-    if(myEventHandler->KeyPressed(SDL_SCANCODE_W))
-    {
-        //SHTOS_LOG_INFO("Layer 1: W PRESSED");
-    }
-    if(myEventHandler->KeyReleased(SDL_SCANCODE_W))
-    {
-        //SHTOS_LOG_INFO("Layer 1: W RELEASED");
-    }
 }
 

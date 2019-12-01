@@ -5,6 +5,8 @@
 #include "EventHandler/EventHandler.h"
 #include "Logger/Logger.h"
 
+#include <SDL2/SDL_mixer.h>
+
 class DemoLayer : public Layer
 {
 public:
@@ -15,6 +17,9 @@ public:
     virtual void onDetach();
     virtual void onUpdate(float elapsed_time);
     virtual void handleEvents(EventHandler *myEventHandler);
+private:
+    uint16_t _bg_texture_id;
+    uint16_t _bg_music_id;
 };
 
 #endif /* DEMOLAYER_H */

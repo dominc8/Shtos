@@ -2,6 +2,7 @@
 #define ASSETMANAGER_H
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_mixer.h>
 
 #include <vector>
 
@@ -24,6 +25,9 @@ public:
 
     static uint16_t LoadTextureFile(const char *filepath);
     static uint16_t LoadTexture(SDL_Renderer* renderer, uint16_t asset_id);
+
+    static uint16_t LoadMusic(const char *filepath); 
+    static bool PlayMusic(uint16_t music_id);
 
 private:
     AssetManager();

@@ -24,7 +24,7 @@ public:
     virtual bool isDead();
     virtual void move(float x_offset, float y_offset);
 
-private:
+protected:
     float _x_pos;
     float _y_pos;
     uint16_t _health;

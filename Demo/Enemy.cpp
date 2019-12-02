@@ -13,12 +13,12 @@ Enemy::~Enemy()
     SHTOS_LOG_INFO("Enemy destructor");
 }
 
-void Enemy::attack(Entity *Player)
+void Enemy::attack(Entity *Player, float elapsed_time)
 {
     uint16_t distance =(uint16_t)sqrt(pow(Player->getXPos() - this->getXPos(), 2) + pow(Player->getYPos() - this->getYPos(), 2));
 
     if(this->getAttackRadius() >= distance)
     {
-        Player->setHealth(Player->getHealth() - 1);
+        Player->setHealth(Player->getHealth() - 0.002f * elapsed_time);
     }
 }

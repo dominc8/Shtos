@@ -11,11 +11,11 @@ DemoLayer2::DemoLayer2() : Layer("DemoLayer2") {}
 
 void DemoLayer2::onAttach() {
     _enemy_texture_id = AssetManager::LoadTextureFile("../Demo/assets/saracen.png");
-    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100);
-    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100);
-    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100);
-    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100);
-    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100);
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100, 10, 10);
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100, 50, 50);
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100, 100, 400);
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100, 500, 20);
+    _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100, 500, 500);
     
     for (auto &enemy : _enemies)
     {
@@ -37,7 +37,7 @@ void DemoLayer2::onUpdate(float elapsed_time)
     {
         if(!enemy.isDead())
         {
-            enemy.move(elapsed_time * ((std::rand() % 1001) - 500), elapsed_time * ((std::rand() % 1001) - 500));
+            enemy.move(elapsed_time *2* ((std::rand() % 1001) - 500), elapsed_time *2* ((std::rand() % 1001) - 500));
             enemy.render();
             enemy.attack(_player);
         }

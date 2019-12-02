@@ -106,9 +106,14 @@ void Application::run()
         Renderer::Clear();
         myEventHandler->Update();
 
+        for (auto iter = _layer_stack.rbegin(); iter != _layer_stack.rend(); ++iter)
+        {
+            (*iter)->handleEvents(myEventHandler);
+        }
+
         for (Layer *layer : _layer_stack)
         {
-            layer->handleEvents(myEventHandler);
+//             layer->handleEvents(myEventHandler);
             layer->onUpdate(elapsed_time);
         }
 

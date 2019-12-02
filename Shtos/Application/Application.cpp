@@ -113,7 +113,6 @@ void Application::run()
 
         for (Layer *layer : _layer_stack)
         {
-//             layer->handleEvents(myEventHandler);
             layer->onUpdate(elapsed_time);
         }
 

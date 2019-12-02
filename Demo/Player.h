@@ -14,7 +14,7 @@ public:
 
     void swordUp();
     void swordRight();
-
+    int getScore();
 private:
     int _score;
     uint16_t _sword_up_texture_id;

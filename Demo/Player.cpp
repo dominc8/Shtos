@@ -29,6 +29,11 @@ void Player::attack(Enemy& Enemy)
     {
         Enemy.setHealth(Enemy.getHealth() - 20);
         printf("HIT!, enemy hp left:%d\n", Enemy.getHealth());
+        if (Enemy.getHealth() <= 0)
+        {
+            ++_score;
+        }
+
     }
     else
     {
@@ -57,6 +62,11 @@ void Player::render()
     {
         Renderer::DrawTexture(_sword_up_texture_id, _x_pos + 0.9*_width, _y_pos + 10, 15, 55);
     }
+}
+
+int Player::getScore()
+{
+    return _score;
 }
 
 

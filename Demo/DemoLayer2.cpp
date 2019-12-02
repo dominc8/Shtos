@@ -36,14 +36,38 @@ void DemoLayer2::onDetach()
 
 void DemoLayer2::onUpdate(float elapsed_time)
 {
+    static bool all_dead = true;
+
+    if (_player->getHealth() == 0)
+    {
+        if (all_dead == false)
+        {
+            all_dead = true;
+            SHTOS_LOG_WARN("Score: %d", _player->getScore());
+        }
+        return;
+    }
+
     _time_since_attack += elapsed_time;
+    all_dead = true;
     for (auto &enemy : _enemies)
     {
         if(!enemy.isDead())
         {
-            enemy.move(elapsed_time *2* ((std::rand() % 1001) - 500), elapsed_time *2* ((std::rand() % 1001) - 500));
+            all_dead = false;
+            enemy.move(0.5f * elapsed_time * (_player->getXPos() - enemy.getXPos() + (std::rand() % 101) - 50), 0.5f * elapsed_time * (_player->getYPos() - enemy.getYPos() + (std::rand() % 101) - 50));
             enemy.render();
             enemy.attack(_player, elapsed_time);
+        }
+    }
+
+    if (all_dead)
+    {
+        int enemies_count = _enemies.size() * 2;
+        _enemies.clear();
+        for (int i = 0; i < enemies_count; ++i)
+        {
+            _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100, 700, std::rand() % 600 + 100);
         }
     }
 

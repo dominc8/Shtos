@@ -17,12 +17,13 @@ public:
     virtual void pushLayer(Layer *layer);
     virtual void popLayer(Layer *layer);
     virtual void run();
+protected:
+    bool _running;
 private:
     SDL_Window *_window;
     Renderer *renderer;
 
     LayerStack _layer_stack;
-    bool _running;
     EventHandler* myEventHandler;
 };
 

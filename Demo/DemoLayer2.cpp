@@ -7,6 +7,9 @@
 
 #include <cstdlib>
 
+bool _was_attack = false;
+float _time_since_attack = 0.0f;
+
 DemoLayer2::DemoLayer2() : Layer("DemoLayer2") {}
 
 void DemoLayer2::onAttach() {
@@ -23,7 +26,7 @@ void DemoLayer2::onAttach() {
     }
 
     _player_texture_id = AssetManager::LoadTextureFile("../Demo/assets/crusader.png");
-    _player = new Player(_player_texture_id, 50, 70, 100, 100);
+    _player = new Player(_player_texture_id, 50, 70, 90, 200);
 }
 
 void DemoLayer2::onDetach()
@@ -33,19 +36,40 @@ void DemoLayer2::onDetach()
 
 void DemoLayer2::onUpdate(float elapsed_time)
 {
+    _time_since_attack += elapsed_time;
     for (auto &enemy : _enemies)
     {
         if(!enemy.isDead())
         {
             enemy.move(elapsed_time *2* ((std::rand() % 1001) - 500), elapsed_time *2* ((std::rand() % 1001) - 500));
             enemy.render();
-            enemy.attack(_player);
+            enemy.attack(_player, elapsed_time);
         }
     }
 
     _player->move(elapsed_time * _player_motion_x, elapsed_time * _player_motion_y);
     _player_motion_x = 0.0f;
     _player_motion_y = 0.0f;
+
+    if (_time_since_attack > 0.2f)
+    {
+        if (_time_since_attack > 0.25f && _was_attack)
+        {
+            _player->swordRight();
+            SHTOS_LOG_INFO("Actually attacking");
+            for (auto &enemy : _enemies)
+            {
+                _player->attack(enemy);
+            }
+            _was_attack = false;
+            _time_since_attack = 0;
+        }
+        else
+        {
+            _player->swordUp();
+        }
+    }
+
     _player->render();
 }
 
@@ -83,11 +107,8 @@ void DemoLayer2::handleEvents(EventHandler *myEventHandler)
 
     if(myEventHandler->KeyPressed(SDL_SCANCODE_SPACE))
     {
+        _was_attack = true;
         SHTOS_LOG_INFO("SWING THAA BLAAAAAAADE\n");
-        for (auto &enemy : _enemies)
-        {
-           _player->attack(enemy);
-        }
         printf("Your hp:%d\n", _player->getHealth());
     }
 }

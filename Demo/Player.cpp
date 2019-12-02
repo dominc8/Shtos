@@ -1,5 +1,7 @@
 
+#include "AssetManager/AssetManager.h"
 #include "Player.h"
+#include "Renderer/Renderer.h"
 #include "Logger/Logger.h"
 
 Player::Player(uint16_t texture_id, uint16_t width, uint16_t height, uint16_t attack_radius, uint16_t health) : Entity(texture_id, width,
@@ -9,6 +11,9 @@ Player::Player(uint16_t texture_id, uint16_t width, uint16_t height, uint16_t at
     this->setYPos(250);
     this->setXPos(250);
     _score = 0;
+
+    _sword_up_texture_id = AssetManager::LoadTextureFile("../Demo/assets/sword_up.png");
+    _sword_right_texture_id = AssetManager::LoadTextureFile("../Demo/assets/sword_right.png");
 }
 
 Player::~Player()
@@ -30,4 +35,28 @@ void Player::attack(Enemy& Enemy)
         printf("Missed!\n");
     }
 }
+
+void Player::swordUp()
+{
+    _sword_attacks = false;
+}
+
+void Player::swordRight()
+{
+    _sword_attacks = true;
+}
+
+void Player::render()
+{
+    Renderer::DrawTexture(_texture_id, _x_pos, _y_pos, _width, _height);
+    if (_sword_attacks)
+    {
+        Renderer::DrawTexture(_sword_right_texture_id, _x_pos + 0.9*_width, _y_pos + 35, 55, 15);
+    }
+    else
+    {
+        Renderer::DrawTexture(_sword_up_texture_id, _x_pos + 0.9*_width, _y_pos + 10, 15, 55);
+    }
+}
+
 

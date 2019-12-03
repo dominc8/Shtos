@@ -8,6 +8,8 @@
 
 #include <SDL2/SDL.h>
 
+#include <stdint.h>
+
 class Application
 {
 public:
@@ -20,6 +22,7 @@ public:
 protected:
     bool _running;
 private:
+    uint32_t _frame_count; 
     SDL_Window *_window;
     Renderer *renderer;
 

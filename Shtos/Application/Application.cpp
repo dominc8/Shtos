@@ -9,7 +9,7 @@
 #include <assert.h>
 #include <chrono>
 
-Application::Application()
+Application::Application() : _frame_count(0)
 {
     SHTOS_LOG_INFO("Application constructor");
     _running = true;
@@ -22,7 +22,7 @@ Application::Application()
         {
             SHTOS_LOG_INFO("Window is good"); 
             
-            if (Renderer::Initialize(_window, -1, 0))
+            if (Renderer::Initialize(_window, -1, SDL_RENDERER_PRESENTVSYNC))
             {
                 SHTOS_LOG_INFO("Renderer is good");
                 Renderer::SetBlendMode(SDL_BLENDMODE_BLEND);
@@ -79,6 +79,7 @@ void Application::popLayer(Layer *layer)
 
 void Application::run()
 {
+    std::chrono::system_clock::time_point begin_application = std::chrono::system_clock::now();
     std::chrono::system_clock::time_point last_time, current_time;
     last_time = std::chrono::system_clock::now();
 
@@ -87,6 +88,7 @@ void Application::run()
     float elapsed_time;
     while (_running)
     {
+        ++_frame_count;
         current_time = std::chrono::system_clock::now();
         elapsed_time = std::chrono::duration<float>(current_time - last_time).count();
         last_time = current_time;
@@ -119,5 +121,10 @@ void Application::run()
         myEventHandler->UpdatePrevInput();
         Renderer::Present();
     }
+
+    std::chrono::system_clock::time_point end_application = std::chrono::system_clock::now();
+    float app_time = std::chrono::duration<float>(end_application - begin_application).count();
+    SHTOS_LOG_INFO("Application::Run ends, recorded %d frames during %f seconds, on average there were %f FPS", _frame_count, app_time, ((float)_frame_count/app_time));
+
 }
 

@@ -10,7 +10,7 @@ SOURCES := $(wildcard Shtos/**/*.cpp)
 
 INCLUDE_DIRS += Demo/
 SOURCES += $(wildcard Demo/*.cpp)
-BIN = DemoApplication
+BIN = Demo/DemoApplication
 
 #########################################
 
@@ -31,9 +31,7 @@ endif
 
 CXX_FLAGS += $(addprefix -I,$(INCLUDE_DIRS))
 
-$(BIN) : $(BUILD_DIR)/$(BIN)
-
-$(BUILD_DIR)/$(BIN) : $(OBJ)
+$(BIN) : $(OBJ)
 	mkdir -p $(@D)
 	$(CXX) $(CXX_FLAGS) $^ $(LIBS) -o $@ $(LD_FLAGS)
 
@@ -49,5 +47,5 @@ clean :
 	rm -rf $(BUILD_DIR)
 
 run :
-	./$(BUILD_DIR)/$(BIN)
+	./$(BIN)
 

@@ -12,8 +12,8 @@ Player::Player(uint16_t texture_id, uint16_t width, uint16_t height, uint16_t at
     this->setXPos(250);
     _score = 0;
 
-    _sword_up_texture_id = AssetManager::LoadTextureFile("../Demo/assets/sword_up.png");
-    _sword_right_texture_id = AssetManager::LoadTextureFile("../Demo/assets/sword_right.png");
+    _sword_up_texture_id = AssetManager::LoadTextureFile("assets/sword_up.png");
+    _sword_right_texture_id = AssetManager::LoadTextureFile("assets/sword_right.png");
 }
 
 Player::~Player()

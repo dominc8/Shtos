@@ -13,7 +13,7 @@ float _time_since_attack = 0.0f;
 DemoLayer2::DemoLayer2() : Layer("DemoLayer2") {}
 
 void DemoLayer2::onAttach() {
-    _enemy_texture_id = AssetManager::LoadTextureFile("../Demo/assets/saracen.png");
+    _enemy_texture_id = AssetManager::LoadTextureFile("assets/saracen.png");
     _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100, 10, 10);
     _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100, 50, 50);
     _enemies.emplace_back(_enemy_texture_id, 50, 60, 50, 100, 100, 400);
@@ -25,7 +25,7 @@ void DemoLayer2::onAttach() {
         enemy.setXPos(700);
     }
 
-    _player_texture_id = AssetManager::LoadTextureFile("../Demo/assets/crusader.png");
+    _player_texture_id = AssetManager::LoadTextureFile("assets/crusader.png");
     _player = new Player(_player_texture_id, 50, 70, 90, 200);
 }
 

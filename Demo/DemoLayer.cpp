@@ -9,9 +9,9 @@ DemoLayer::DemoLayer() : Layer("DemoLayer") {}
 
 void DemoLayer::onAttach()
 {
-    _bg_texture_id = AssetManager::LoadTextureFile("../Demo/assets/bg.jpg");
+    _bg_texture_id = AssetManager::LoadTextureFile("assets/bg.jpg");
 
-    _bg_music_id = AssetManager::LoadMusic("../Demo/assets/the-chant.mp3");
+    _bg_music_id = AssetManager::LoadMusic("assets/the-chant.mp3");
     AssetManager::PlayMusic(_bg_music_id);
 }
 
